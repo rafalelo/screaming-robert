@@ -1,0 +1,102 @@
+{
+	"name": "screaming-robert",
+	"productName": "Screaming Robert",
+	"version": "0.1.0",
+	"description": "Flash .hex file to your 3D printer!",
+	"license": "MIT",
+	"repository": "https://gitlab.com/gerwant/screaming-robert",
+	"main": "index.js",
+	"author": {
+		"name": "Your Name",
+		"email": "user@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"lint": "xo",
+		"test": "npm run lint",
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder --windows",
+		"publish": "electron-builder --windows --publish onTag ",
+		"release": "np"
+	},
+	"dependencies": {
+		"edit-json-file": "^1.4.0",
+		"electron-context-menu": "^0.15.0",
+		"electron-debug": "^3.0.0",
+		"electron-is-dev": "^1.2.0",
+		"electron-store": "^5.1.0",
+		"electron-unhandled": "^3.0.0",
+		"electron-updater": "^4.0.6",
+		"electron-util": "^0.13.0",
+		"get-user-media-promise": "^1.1.4",
+		"jquery": "^3.5.1",
+		"microphone-stream": "^5.0.1",
+		"serialport": "^9.0.0",
+		"v8-compile-cache": "^2.1.1"
+	},
+	"devDependencies": {
+		"electron": "^9.1.2",
+		"electron-builder": "^21.2.0",
+		"electron-is-dev": "^1.2.0",
+		"electron-rebuild": "^1.11.0",
+		"np": "^5.0.3",
+		"xo": "^0.25.3"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		]
+	},
+	"np": {
+		"publish": false,
+		"releaseDraft": false
+	},
+	"build": {
+		"appId": "com.screaming-robert",
+		"productName": "Screaming Robert",
+		"extraResources": [
+			"bin",
+			"localization"
+		],
+		"npmRebuild": false,
+		"win": {
+			"publish": ["github"]
+		  },
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"darkModeSupport": true
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			],
+			"category": "Network;Chat",
+			"executableName": "Screaming Robert",
+			"vendor": "Rafal elo"
+		},
+		"deb": {
+			"maintainer": "Rafal elo",
+			"vendor": "Rafal elo",
+			"description": "Flash .hex file to your 3D printer!"
+		}
+	}
+}

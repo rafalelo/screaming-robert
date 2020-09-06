@@ -1,0 +1,36 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    height: 100% !important;
+}
+
+/* Use OS default fonts */
+body {
+    overflow: hidden;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        'Helvetica Neue',
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga', 'clig', 'kern';
+    background-color: #f2f2f2  ;
+}
+
+.threshold{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    color: white;
+
+
+}
